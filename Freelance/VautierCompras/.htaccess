@@ -1,0 +1,25 @@
+#default index page
+#DirectoryIndex index.php
+
+#PHP code in HTML file
+#AddType cgi-script .php .htm .html .phtml
+
+#
+RewriteEngine On
+#
+# REDIRECT /folder/index.php to /folder/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.php\ HTTP/
+RewriteRule ^(([^/]+/)*)index\.php$ /$1 [R=301]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)1\ HTTP/
+RewriteRule ^(([^/]+/)*)1$ /$1 [R=301]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*localizacao\.php\ HTTP/
+#RewriteRule ^(([^/]+/)*)localizacao\.php$ $1/localizacao [R=301]
+#RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*contato\.php\ HTTP/
+#RewriteRule ^(([^/]+/)*)contato\.php$ $1/contato [R=301]
+#
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ loja.php?nome=$1 [NC]
+RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/?$ loja.php?nome=$1&pagina=$2 [NC]
+RewriteRule ^(.*)/localizacao$ $1/localizacao.php [NC]
+RewriteRule ^(.*)/contato$ $1/contato.php [NC]

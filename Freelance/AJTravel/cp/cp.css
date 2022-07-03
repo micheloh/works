@@ -1,0 +1,149 @@
+/* 
+    Document   : cp
+    Created on : Jan 23, 2013, 4:38:09 PM
+    Author     : H_W
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+div#cpConteinerPrincipal
+{
+    width: 1000px;
+    background: #002956;
+    margin: auto;
+    padding-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+div#conteudoPagina
+{
+    position: absolute;
+    margin-left: 200px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    width: 780px;
+    margin-top: 20px;
+    
+}
+
+div#conteudoPagina span#cplabel
+{
+    
+}
+
+div#menuTop
+{
+    width: 100%;
+    background: #002956;
+    height: 130px;
+    z-index: 2;
+}
+
+div#menuTop img
+{
+    vertical-align: middle;
+}
+
+div#menuTop span
+{
+    margin-left: 20px;
+    font-size: 30px;
+    color: #fff;
+}
+
+div#menuLateral
+{
+    position: absolute;
+    margin-top: 20px;
+    z-index: 10;
+}
+
+div#menuLateral ul { 
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+    width: 150px; /* Width of Menu Items */ 
+    border-bottom: 1px solid #000; 
+
+} 
+
+div#menuLateral ul li { 
+    position: relative;
+
+} 
+
+div#menuLateral li ul { 
+    position: absolute; 
+    left: 149px; /*Set 1px less than menu width */ 
+    top: 0; 
+    display: block; 
+} 
+
+div#menuLateral li:hover ul {
+    display: block; 
+} 
+
+div#menuLateral li:hover>ul { 
+    visibility:visible; 
+} 
+
+div#menuLateral ul ul {
+    visibility:hidden; 
+} 
+
+/* Fix IE. Hide from IE Mac \*/ 
+* html body div#cpConteinerPrincipal div#menuLateral ul li { float: left; height: 30px; } 
+* html body div#cpConteinerPrincipal div#menuLateral ul li a { height: 30px; } 
+/* End */ 
+
+/* Make-up syles */ 
+
+div#menuLateral ul, li { 
+    margin: 0 0 0 0; 
+} 
+
+/* Styles for Menu Items */ 
+div#menuLateral ul a { 
+    display: block; 
+    text-decoration: none; 
+    color: #fff; 
+    background: #00ACD0; /* IE6 Bug */ 
+    padding: 5px; 
+    border: 1px solid #000; 
+    border-bottom: 0px; 
+} 
+
+div#menuLateral ul span#manyMenu { 
+    display: block; 
+    text-decoration: none; 
+    color: #fff; 
+    background: #00ACD0; /* IE6 Bug */ 
+    padding: 5px; 
+    border: 1px solid #000; 
+    border-bottom: 0px; 
+} 
+
+/* Hover Styles */ 
+div#menuLateral ul a:hover { 
+
+    background: #FFC500; 
+} 
+
+/* Sub Menu Styles */ 
+div#menuLateral li ul a { 
+    text-decoration: none; 
+    color: #fff; 
+    background: #00ACD0; /* IE6 Bug */ 
+    padding: 5px; 
+    border: 1px solid #000; 
+    border-bottom: 0px; 
+} 
+
+/* Sub Menu Hover Styles */ 
+div#menuLateral li ul a:hover { 
+    background: #FFC500; 
+
+} 
+

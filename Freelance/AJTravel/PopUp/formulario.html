@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>AJTravel - Cadastro de curriculum</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="formulario.css">
+        <script src="formulario.js"></script>
+    </head>
+
+
+
+
+    <body>
+        <div id="banner"></div>
+        <form id="formularioDeCadastro" action="enviarCadastro.php" method="post">
+            <div class="partes" id="parte_1">
+                <h3>Dados Pessoais</h3>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <span>*</span> - campos obrigatórios
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nome Completo:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputNomeCompleto" maxlength="100"  tabindex=1 name="nome" onblur="validarTexto(this)"><span>*</span> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Data de Nascimento:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputDataNascimento" maxlength="10" tabindex=2 name="dataNascimento" onkeypress="return checarDataNascimento(event,this);" onblur="validarDataNascimento(this)"><span>*</span> <span id="descricao">Ex: 01/01/2000</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            CPF:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputCPF" maxlength="14" tabindex=3 name="CPF" onkeypress="return checarCPF(event);" onblur="validarCPF(this)"><span>*</span> <span id="descricao">Ex: 123.456.678-90</span>	
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            RG:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputRG" maxlength="12" tabindex=4 name="RG" onblur="validarTexto(this)"><span>*</span>						
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Sexo:
+                        </td>
+                        <td>
+                            <input type="radio" name="sexo" value="Masculino" checked tabindex=5>Masculino
+                            <input type="radio" name="sexo" value="Feminino" tabindex=6>Feminino
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nome do Pai:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputNomePai" maxlength="100" tabindex=7 name="nomePai" onblur="validarTexto(this)"><span>*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nome da Mãe:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputNomeMae" maxlength="100" tabindex=8 name="nomeMae" onblur="validarTexto(this)"><span>*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Endereço no Brasil:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputEndereco" maxlength="100" tabindex=9 name="endereco" onblur="validarTexto(this)"><span>*</span>
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Cidade:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputCidade" maxlength="100" tabindex=10 name="cidade" onblur="validarTextoPequeno(this)"><span>*</span>
+                            UF:
+                            <input type="text" maxlength="2" id="inputUF" tabindex=11 name="uf" style="width:30px;" onblur="validarTextoPequeno(this)"><span>*</span> <span id="descricao">Ex: SP</span>
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            CEP:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputCEP" name="cep" maxlength="9" tabindex=12 onkeypress="return checarCEP(event);" onblur="validarCEP(this)"><span>*</span> <span id="descricao">Ex: 12345-678</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Telefone:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputTelefone" maxlength="16" tabindex=13 name="telefone" onkeypress="return checarTelefone(event);" onblur="validarTelefone(this)"><span>*</span> <span id="descricao">Ex: (cod.País)(DDD)12345678</span>
+                        </td>
+                    </tr>						
+                    <tr>
+                        <td id="alinhaDir">
+                            Celular:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputCelular" maxlength="17" tabindex=14 name="celular" onkeypress="return checarCelular(event,this);" onblur="validarCelular(this)"><span>*</span> <span id="descricao">Ex: (cod.País)(DDD)123456789</span>
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Estado Civil:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectEstadoCivil" id="inputSelectEstadoCivil" tabindex=15 form="formularioDeCadastro" onchange="checarEstadoCivil()">
+                                <option value="Solteiro" selected>Solteiro</option>
+                                <option value="Casado">Casado</option>
+                                <option value="Viuvo">Viuvo</option>
+                                <option value="Separado">Separado</option>
+                                <option value="Divorciado">Divorciado</option>
+                            </select>
+                        </td>
+                    </tr>	
+                    <tr id="linhaNomeConjuge">
+                        <td id="alinhaDir">
+                            Nome do Conjuge:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputNomeConjuge" maxlength="100" tabindex=16 name="nomeConjuge" onblur="validarTexto(this)"><span id="conjNomeObrigatorio"></span>
+                        </td>
+                    </tr>	
+                    <tr id="linhaDataNascimentoConjuge">
+                        <td id="alinhaDir">
+                            Data de Nascimento do Conjuge:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputDataNascimentoConjuge" maxlength="10"  tabindex=17 name="dataNascimentoConjuge" onkeypress="return checarDataNascimento(event, this);" onblur="validarDataNascimento(this)"><span id="conjDataObrigatorio"></span> <span id="descricao">Ex: 01/01/2000</span>
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td></td>
+                        <td id="erroMsg1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" class="botaoFormulario" tabindex=18 onclick="checkParte1()">Próximo</button>
+                        </td>
+                    </tr>	
+                </table>
+
+            </div>
+            <div class="partes" id="parte_2">
+                <h3>Dados Pessoais</h3>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <span>*</span> - campos obrigatórios
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nacionalidade:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputNacionalidade" maxlength="20"  tabindex=19 name="nacionalidade" onblur="validarTexto(this)"><span>*</span>
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Descendente de Japonês:
+                        </td>
+                        <td>
+                            <input type="radio" id="descendenteNao" onchange="checarDescendente()" name="descendente" value="Não" tabindex=20 checked>Não
+                            <input type="radio" id="descendenteSim" onchange="checarDescendente()" name="descendente" value="Sim" tabindex=21>Sim
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Grau de descendência:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectDescendencia" id="inputDescendencia" tabindex=22 form="formularioDeCadastro" onchange="checarTipoDescendencia()">
+                                <option value="Issei" selected>1a Geração(Issei)</option>
+                                <option value="Nissei">2a Geração(Nissei)</option>
+                                <option value="Sansei">3a Geração(Sansei)</option>
+                                <option value="Yonsei">4a Geração(Yonsei)</option>
+                                <option value="Outro">Outro</option>			
+                            </select>
+                            <input type="text" id="inputNivelDescendencia" maxlength="10"  tabindex=23 name="nivelDescendencia" onblur="validarTexto(this)"><span id="descendenciaObrigatorio"></span>
+
+                        </td>	
+                    </tr>        
+                    <tr>
+                        <td id="alinhaDir">
+                            Escolaridade:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectEscolaridade" id="inputEscolaridade" tabindex=24 form="formularioDeCadastro" onchange="checarTipoEscolaridade()">
+                                <option value="Pós-Graduação Completo" selected>Pós-Graduação Completo</option>
+                                <option value="Pós-Graduação Incompleto">Pós-Graduação Incompleto</option>
+                                <option value="Superior Completo">Superior Completo</option>
+                                <option value="Superior Incompleto">Superior Incompleto</option>
+                                <option value="Médio Completo">Médio Completo</option>
+                                <option value="Médio Incompleto">Médio Incompleto</option>
+                                <option value="Fundamental Completo">Fundamental Completo</option>
+                                <option value="Fundamental Incompleto">Fundamental Incompleto</option>
+                                <option value="Analfabeto">Analfabeto</option>
+
+                            </select>
+                        </td>	
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nome do curso superior:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputCursoSuperior" maxlength="100" tabindex=25 name="cursoSuperior" onblur="validarTexto(this)"><span id="cursoSuperiorObrigatorio"></span>
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Possui Passaporte:
+                        </td>
+                        <td>
+                            <input type="radio" id="passaporteNao" onchange="checarPossuiPassaporte()" name="passaporte" tabindex=26 value="Não possui" checked>Não
+                            <input type="radio" id="passaporteSim" onchange="checarPossuiPassaporte()" name="passaporte" tabindex=27 value="Possui" >Sim
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Numero do passaporte: 
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputNumeroPassaporte" maxlength="15" tabindex=28 name="numeroPassaporte" onblur="validarTextoPequeno(this)"><span id="passaporteObrigatorio">*</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Data de validade do passaporte:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputValidadePassaporte" maxlength="10" tabindex=29 name="validadePassaporte" onkeypress="return checarDataNascimento(event, this);" onblur="validarDataNascimento(this)"><span id="passaporteDataValidade">*</span> <span id="descricao">Ex: 01/01/2000</span>
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Possui reentry:
+                        </td>
+                        <td>
+                            <input type="radio" id="reentryNao" onchange="checarPossuiReentry()" name="reentry" tabindex=30 value="Não possui" checked>Não
+                            <input type="radio" id="reentrySim" onchange="checarPossuiReentry()" name="reentry" tabindex=31 value="Possui">Sim
+
+                        </td>		
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            Tipo do Visto:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputTipoVisto" maxlength="50" tabindex=32 name="tipoVisto" onblur="validarTextoPequeno(this)"><span id="vistoObrigatorio">*</span>
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Data de validade do visto:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputValidadeVisto" maxlength="10" tabindex=33 name="validadeVisto" onkeypress="return checarDataNascimento(event, this);" onblur="validarDataNascimento(this)"><span id="vistoDataValidade">*</span> <span id="descricao">Ex: 01/01/2000</span>
+                        </td>		
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            Já esteve no Japão:
+                        </td>
+                        <td>
+                            <input type="radio" id="japaoNao" onchange="checarFoiJapao()" tabindex=34 name="foijapao" value="Não" checked>Não
+                            <input type="radio" id="japaoSim" onchange="checarFoiJapao()" tabindex=35 name="foijapao" value="Sim" >Sim		
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Quantas vezes:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputIdaJapao" maxlength="2" tabindex=36 name="idaJapao" onkeypress="return aceitarNumeros(event);">
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Possui carta de Habilitação no Brasil:
+                        </td>
+                        <td>
+                            <input type="radio" name="cartaBrasil" tabindex=37 value="Não" checked>Não
+                            <input type="radio" name="cartaBrasil" tabindex=38 value="Sim">Sim
+                        </td>		
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            E no Japão:
+                        </td>
+                        <td>
+                            <input type="radio" name="cartaJapao" tabindex=39 value="Não" checked>Não	
+                            <input type="radio" name="cartaJapao" tabindex=40 value="Sim">Sim
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="erroMsg2">
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" class="botaoFormulario" tabindex=41 onclick="mudarPagina(1)">Voltar</button> <button type="button" class="botaoFormulario" onclick="checkParte2()">Próximo</button>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="partes" id="parte_3">
+                <h3>Dados Pessoais</h3>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <span>*</span> - campos obrigatórios
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Peso(Aprox.):
+                        </td>
+                        <td>
+                            <input type="text" id="inputPeso" maxlength="5" tabindex=42 name="peso" style="width:50px;" onblur="validarMedida(this)">Kg* <span id="descricao">Ex: 75,5</span>
+                        </td>				
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Altura(Aprox.):
+                        </td>
+                        <td>
+                            <input type="text" id="inputAltura" maxlength="4" tabindex=43 name="altura" style="width:50px;" onblur="validarMedida(this)">m* <span id="descricao">Ex: 1,76</span>
+                        </td>				
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Numero do Sapato(Aprox.):
+                        </td>
+                        <td>
+                            <input type="text" id="inputSapato" maxlength="2" tabindex=44 name="sapato" style="width:50px;" onkeypress="return aceitarNumeros(event);" onblur="validarTextoPequeno(this)">* <span id="descricao">Ex: 41</span>
+                        </td>				
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            Coordenação:
+                        </td>
+                        <td>
+                            <input type="radio" name="coordenacao" value="destro" checked tabindex=45>Destro
+                            <input type="radio" name="coordenacao" value="canhoto" tabindex=46>Canhoto
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Usa óculos:
+                        </td>
+                        <td>
+                            <input type="radio" id="oculosNao" onchange="checarOculos()" tabindex=47 name="oculos" value="Não usa" checked>Não
+                            <input type="radio" id="oculosSim" onchange="checarOculos()" tabindex=48 name="oculos" value="Usa">Sim		
+                        </td>		
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            Grau:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="inputGrau" maxlength="5" tabindex=49 name="grau" style="width:50px;" onblur="validarMedida(this)"><span id="oculosObrigatorio">*</span>
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Consome Bebidas Alcoólicas:
+                        </td>
+                        <td>
+                            <input type="radio" id="bebidaNao" tabindex=50 name="bebidas" value="Não" checked>Não	
+                            <input type="radio" id="bebidaSim" tabindex=51 name="bebidas" value="Sim">Sim
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Fumante:
+                        </td>
+                        <td>
+                            <input type="radio" id="fumaNao" tabindex=52 name="fumante" value="Não" checked>Não
+                            <input type="radio" id="fumaSim" tabindex=53 name="fumante" value="Sim">Sim		
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Possui tatuagem:
+                        </td>
+                        <td>
+                            <input type="radio" id="tatuagemNao" tabindex=54 name="tatuagem" value="Não" checked >Não
+                            <input type="radio" id="tatuagemSim" tabindex=55 name="tatuagem" value="Sim">Sim
+                        </td>		
+                    </tr>		
+                    <tr>
+                        <td id="alinhaDir">
+                            Estado de Saúde:
+                        </td>
+                        <td>
+                            <input type="radio" id="saudeBoa" tabindex=56 onchange="checarSaude()" name="saude" value="Boa" checked>Boa
+                            <input type="radio" id="saudeRuim" tabindex=57 onchange="checarSaude()" name="saude" value="Ruim">Ruim
+                        </td>		
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Motivo:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="inputMotivo" maxlength="100" tabindex=58 name="motivo" onblur="validarTextoPequeno(this)"><span id="motivoObrigatorio">*</span>
+                        </td>		
+                    </tr>						
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Idioma Japones
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Entende:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectJpEntende" id="inputJpEntende" tabindex=59 form="formularioDeCadastro">
+                                <option value="Fluente" selected>Fluente</option>
+                                <option value="Mais ou menos">Mais ou menos</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </td>	
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Fala:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectJpFala" id="inputJpFala" tabindex=60 form="formularioDeCadastro">
+                                <option value="Fluente" selected>Fluente</option>
+                                <option value="Mais ou menos">Mais ou menos</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </td>	
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Lê:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectJpLe" id="inputJpLe" tabindex=61 form="formularioDeCadastro">
+                                <option value="Fluente" selected>Fluente</option>
+                                <option value="Mais ou menos">Mais ou menos</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </td>	
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Escreve:
+                        </td>
+                        <td id="tamSelect">
+                            <select name="selectJpEscreve" id="inputJpEscreve" tabindex=62 form="formularioDeCadastro">
+                                <option value="Fluente" selected>Fluente</option>
+                                <option value="Mais ou menos">Mais ou menos</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </td>	
+                    </tr>	
+
+                    <tr>
+                        <td></td>
+                        <td id="erroMsg3">
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" class="botaoFormulario" tabindex=63 onclick="mudarPagina(2)">Voltar</button> <button type="button" class="botaoFormulario" onclick="checkParte3()">Próximo</button>
+                        </td>
+                    </tr>	
+                </table>
+
+            </div>
+
+            <div class="partes" id="parte_4">
+                <h3>Referência no Japão</h3>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <span>*</span> - campos obrigatórios
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Nome Completo:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="refJpNome" maxlength="100"  tabindex=64 name="refJpNome"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Parentesco:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="refJpParentesco" maxlength="100"  tabindex=65 name="refJpParentesco"> 
+                        </td>
+                    </tr>	
+                    <tr>
+                        <td id="alinhaDir">
+                            Endereço:
+                        </td>
+                        <td id="tamGde">
+                            <input type="text" id="refJpEndereco" maxlength="100"  tabindex=66 name="refJpEndereco"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Telefone 1:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="refJpTelefone1" maxlength="17" tabindex=67 name="refJpTelefone1" onkeypress="return checarCelular(event,this);"> <span id="descricao">Ex: (cod.País)(DDD)123456789</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            Telefone 2:
+                        </td>
+                        <td id="tamMd">
+                            <input type="text" id="refJpTelefone2" maxlength="17" tabindex=68 name="refJpTelefone2" onkeypress="return checarCelular(event,this);"> <span id="descricao">Ex: (cod.País)(DDD)123456789</span>
+                        </td>
+                    </tr>		
+                </table>
+                <br><br><br>
+                <input type="hidden" id="qtdeExperienciaBrasil" name="qtdeExperienciaBrasil" value=0>
+                <table id="listaExperienciaBrasil">
+                    <tr>
+                        <td colspan="5">
+                            Experiência profissional no Brasil <button type="button" class="botaoFormulario" tabindex=69 onclick="adicionarNovaExperiencia(2)">Adicionar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="experienciaDesc">
+                            Tipo de Serviço
+                        </td>
+                        <td  id="experienciaPeriodo">
+                            Período Inicial
+                        </td>
+                        <td  id="experienciaPeriodo">
+                            Período Final
+                        </td>
+                        <td id="experienciaDesc">
+                            Local de Trabalho
+                        </td>
+                        <td id="experienciaRemover">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <input type="hidden" id="qtdeExperienciaJapao" name="qtdeExperienciaJapao" value=0>
+                <table id="listaExperienciaJapao">
+                    <tr>
+                        <td colspan="5">
+                            Experiência profissional no Japão <button type="button" class="botaoFormulario" onclick="adicionarNovaExperiencia(1)">Adicionar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="experienciaDesc">
+                            Tipo de Serviço
+                        </td>
+                        <td  id="experienciaPeriodo">
+                            Período Inicial
+                        </td>
+                        <td  id="experienciaPeriodo">
+                            Período Final
+                        </td>
+                        <td id="experienciaDesc">
+                            Local de Trabalho
+                        </td>
+                        <td id="experienciaRemover">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <button type="button" class="botaoFormulario" onclick="mudarPagina(3)">Voltar</button> <button type="button" class="botaoFormulario" onclick="checkParte4()">Próximo</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="partes" id="parte_5">
+                <h3>Considerações Finais</h3>
+                <table>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <span>*</span> - campos obrigatórios
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir">
+                            <span id="descricao">Ex: Tenho interesse em trabalhar na província de Aichi-ken, de preferência em fábrica de alimentos, pois tenho amigos e familiares que moram e trabalham na região.</span>
+                        </td>
+                        <td id="tamGde">
+                            <textarea name="consideracoesFinais" style="resize:none; width: 300px; height: 100px;" maxlength="300" tabindex=70></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <br><br><br>
+                            - Confira se todos os dados inseridos estão corretos
+                            <br><br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="alinhaDir"></td>
+                        <td>
+                            <button type="button" class="botaoFormulario" onclick="mudarPagina(4)" tabindex=71>Voltar</button> <input type="submit" class="botaoFormulario" value="Enviar Cadastro">
+                        </td>
+                    </tr>	
+                </table>
+            </div>
+        </form>
+    </body>
+
+</html>

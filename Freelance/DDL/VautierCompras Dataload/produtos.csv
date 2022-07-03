@@ -1,0 +1,7 @@
+idLoja;nome;descricao;  preco  ;URL
+11;Blusa com strass;Blusinha com strass em várias cores;R$ 10,50;a1.jpg
+Exemplo acima, seguir a mesma coisa,campos vazio = '-';;;;
+11;Blusa com strass;Blusinha com strass em várias cores;R$ 10,50;1.jpg
+11;Saia Longa;Saia longa em várias cores;R$ 9,00;2.jpg
+11;Casaquinho Floral;Casaco floral  em várias cores;R$ 5,00;3.jpg
+11;Blusa com desenho rolling stone;Blusa com desenho dos rolling stones  em várias cores;R$ 2,00;4.jpg

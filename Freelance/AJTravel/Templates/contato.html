@@ -1,0 +1,65 @@
+<div id="contatoDiv">
+
+<form id="formularioDeCadastro" action="envioEmail.php" method="post">
+    <span id="tituloContato">Contato</span>
+<table>
+	<tr>
+		<td id="alinhaDir">
+                        Nome:
+                </td>
+		<td>
+			<input type="text" id="contatoNome" maxlength="100"  tabindex=1 name="contatoNome">
+		</td>
+	</tr>  
+	<tr>
+		<td id="alinhaDir">
+                        Email:
+                </td>
+		<td>
+			<input type="text" id="contatoEmail" maxlength="100"  tabindex=1 name="contatoEmail">
+		</td>
+	</tr>    
+	<tr>
+		<td id="alinhaDir">
+                        Telefone:
+                </td>
+		<td>
+			<input type="text" id="contatoTelefone" maxlength="100"  tabindex=1 name="contatoTelefone">
+		</td>
+	</tr>  
+	<tr>
+		<td id="alinhaDir">
+			Assunto:
+		</td>
+		<td id="tamSelect">
+			<select name="selectAssunto" id="inputSelectAssunto" tabindex=15 form="formularioDeCadastro">
+				<option value="Dúvida" selected>Dúvida</option>
+				<option value="Reclamação">Reclamação</option>
+				<option value="Sugestão">Sugestão</option>
+				<option value="Outros">Outros</option>
+			</select>
+		</td>
+	</tr>	
+	<tr>
+		<td id="alinhaDir">
+			Mensagem:
+		</td>
+		<td>
+			<textarea id="textAreaMensagem" name="assuntoMensagem" wrap="hard" style="resize:none; width: 300px; height: 100px;" maxlength="300" tabindex=70></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td id="alinhaDir"></td>
+		<td>
+                    <input type="submit" class="botaoFormulario" value="Enviar">
+		</td>
+	</tr>  
+	<tr>
+		<td id="alinhaDir"></td>
+		<td>
+			<span id="statusEnvioEmail"></span>
+		</td>
+	</tr>          
+</table>
+</form>
+</div>

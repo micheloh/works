@@ -1,0 +1,122 @@
+body
+{
+	font-family: Verdana;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div#parte_1 table tr td#alinhaDir, div#parte_2 table tr td#alinhaDir, div#parte_3 table tr td#alinhaDir, div#parte_4 table tr td#alinhaDir, div#parte_5 table tr td#alinhaDir
+{
+	text-align: right;
+	padding-left: 2px;
+	width: 250px;
+}
+
+div#parte_1 table tr td input, div#parte_2 table tr td input, div#parte_3 table tr td input, div#parte_4 table tr td input, div#parte_5 table tr td input
+{
+	padding-left: 2px;
+	border: 1px solid #000000;
+}
+
+div#parte_1 table tr td span, div#parte_2 table tr td span, div#parte_3 table tr td span, div#parte_4 table tr td span, div#parte_5 table tr td span
+{
+	color: #ee4444;
+}
+
+div#parte_1 table tr td span#descricao, div#parte_2 table tr td span#descricao, div#parte_3 table tr td span#descricao, div#parte_4 table tr td span#descricao, div#parte_5 table tr td span#descricao
+{
+	font-size: 10px;
+	font-weight: normal;
+}
+
+div#parte_1 table tr td#tamGde input[type="text"], div#parte_2 table tr td#tamGde input[type="text"], div#parte_3 table tr td#tamGde input[type="text"], div#parte_4 table tr td#tamGde input[type="text"], div#parte_5 table tr td#tamGde input[type="text"]
+{
+	margin-left: 2px;
+	width:250px;
+}
+
+div#parte_1 table tr td#tam50 input[type="text"], div#parte_2 table tr td#tam50 input[type="text"], div#parte_3 table tr td#tam50 input[type="text"], div#parte_4 table tr td#tam50 input[type="text"], div#parte_5 table tr td#tam50 input[type="text"]
+{
+	margin-left: 2px;
+	width:120px;
+}
+
+div#parte_1 table tr td#tamSelect select, div#parte_2 table tr td#tamSelect select, div#parte_3 table tr td#tamSelect select, div#parte_4 table tr td#tamSelect select, div#parte_5 table tr td#tamSelect select
+{
+	text-align: left;
+	border: 1px solid #000000;
+}
+
+div#banner
+{
+	width: 650px;
+	height: 123px;
+	background-image:url('../Images/logo.png');
+        background-position: center;
+        background-color: #002956;
+	background-repeat:no-repeat;
+}
+
+
+.partes
+{
+	display: none;
+	width: 650px;
+}
+
+.botaoFormulario
+{
+	background: #ffffff;
+	border: 1px solid #000000;
+	font-weight: normal;
+}
+
+.botaoFormulario:hover
+{
+	background: #dddddd;
+}
+
+h3
+{
+	text-align: center;
+	font-size: x-large;
+}
+
+
+
+div#parte_4 table tr td#experienciaDesc
+{
+	width: 175px;
+}
+
+div#parte_4 table tr td#experienciaPeriodo
+{
+	width: 115px;
+}
+
+div#parte_4 table tr td#experienciaRemover
+{
+	width: 70px;
+}
+
+div#parte_4 table tr td#experienciaDesc input[type="text"]
+{
+	width: 170px;
+}
+
+div#parte_4 table tr td#experienciaPeriodo input[type="text"]
+{
+	width: 110px;
+}
+
+div#parte_4 table tr td#experienciaRemover button
+{
+	width: 65px;
+}
+
+div#parte_5 table tr td textarea
+{
+	resize:none; 
+	width: 300px; 
+	height: 100px;
+}
