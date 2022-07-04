@@ -1,0 +1,30 @@
+select CTBCNTDIMCOD,
+       CTBCNTCOD,
+       CTBCNTEMPCOD,
+       sum(composicao) CMPNUM,
+       1 IND_LKP_CONTACONTB
+
+from (
+      select a.CTBCNTDIMCOD CTBCNTDIMCOD,
+             a.ctbcntcod CTBCNTCOD,
+             a.ctbcntempcod CTBCNTEMPCOD,
+            (case when b.sgmcod = '-3' then 3
+              when b.sgmcod = '010000' or b.sgmcod = '300000' then 1
+              else 2 end) composicao
+      from dmcontroladoria.cdmkctbcntdim a, dmcontroladoria.cdmkctbcntcmpdim b
+      where a.ctbcntdimcod = b.ctbcntdimcod
+        and b.ctbcntcmpvigfnldat = to_date('31/12/2999', 'dd/mm/yyyy')
+      group by a.CTBCNTDIMCOD,
+               a.ctbcntempcod, 
+               a.ctbcntcod,
+            (case when b.sgmcod = '-3' then 3
+              when b.sgmcod = '010000' or b.sgmcod = '300000' then 1
+              else 2 end)
+      )
+
+group by CTBCNTDIMCOD, CTBCNTEMPCOD, CTBCNTCOD
+;
+
+#ps_stg.$PAR_OWN_OCL_DMHPCM#
+
+COLOCAR EM CONTA CONTABIL

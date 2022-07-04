@@ -1,0 +1,5 @@
+cd #ps_stg.$PAR_PATH_TXT#; rm -f ADBS011S02.sh; echo 'qtdlin=`head -2 ADBS011S01 | wc -l`' > ADBS011S02.sh; echo 'if [ ${qtdlin} -eq 1 ] ; then' >> ADBS011S02.sh; echo '   rm -f ADBS011S99' >> ADBS011S02.sh; echo 'fi' >> ADBS011S02.sh; sh ADBS011S02.sh; rm -f ADBS011S02.sh 
+
+
+ADBS011S01 = Nome do arquivo 
+ADBS011S02 = Nome do qual vai criar uma SH 
