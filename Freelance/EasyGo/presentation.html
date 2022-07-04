@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>EasyGo! - Just have fun</title>
+	
+	<link rel="stylesheet" type="text/css" href="src/jquery.fullPage.css" />
+	<style>
+
+
+	body{
+		color: #333;
+		font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+	}
+
+
+	/* Style for our header texts
+	* --------------------------------------- */
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		margin:0;
+		padding:0;
+	}
+	h2{
+		font-size: 2em;
+		margin: 0 0 18px 0;
+		font-family: arial,helvetica;
+	}
+	#section0 h1{
+		color: #333;
+		font-size: 4em;
+		font-family: arial,helvetica;
+		margin:0;
+		padding:0;
+	}
+	#section0 img{
+		height: 50%;
+		width: 50%
+		margin: 40px 0 0 0;
+	}
+	#section1 h1{
+		position: absolute;
+		font-size: 6em;
+		font-family: arial,helvetica;
+		color: #f8ee58;
+		margin:0;
+		padding:0;
+		top: 50%;
+		left: 0%;
+		margin-top: -102px;
+		margin-left: 50px;
+		z-index: 1;
+		text-align:center;
+	}
+	#section2 #slide3 h1{
+		position: absolute;
+		font-size: 5em;
+		font-family: arial,helvetica;
+		left: 70%;
+		text-align:center;
+	}
+	#section3 h1{
+		position: absolute;
+		font-size: 6em;
+		font-family: arial,helvetica;
+		color: #8B8EB1;
+		margin:0;
+		padding:0;
+		top: 50%;
+		left: 33%;
+		margin-top: -102px;
+		margin-left: 50px;
+		z-index: 1;
+		text-align:center;
+	}
+	#section5 h1{
+		position: absolute;
+		font-size: 6em;
+		font-family: arial,helvetica;
+		color: #40262F;
+		margin:0;
+		padding:0;
+		top: 50%;
+		margin-top: -102px;
+		margin-left: 80px;
+		z-index: 1;
+		text-align:center;
+	}
+	#section5 h2{
+		font-size: 4em;
+		margin: 0 0 18px 0;
+	}
+
+	/* Common styles
+	* --------------------------------------- */
+	img{
+	    -webkit-transition: all 0.7s ease-out;
+		-moz-transition: all 0.7s ease-out;
+		-o-transition: all 0.7s ease-out;
+		transition: all 0.7s ease-out;
+	}
+	.section{
+		text-align:center;
+		overflow:hidden;
+	}
+	.wrap{
+		width: 1180px;
+		height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+	}
+	.box{
+		text-align: left;
+		color: #808080;
+		font-size: 1.2em;
+		line-height: 1.6em;
+	}
+	
+	#section0,
+	#section1{
+		background-size: cover;
+	}
+	
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(img/queue_blur.jpg);
+		padding: 30% 0 0 0;
+	}
+	#section2 #slide1,
+	#section2 #slide2{
+		background-color: #CAE19B;
+		padding: 6% 0 0 0;
+	}
+	#section2 #slide3{
+		background-color: #F0F0F0;
+	}
+	#section3{
+		background-color: #B5D4CE;
+		padding: 6% 0 0 0;
+	}
+	#section4 img{
+		position:absolute;
+		z-index: 1;
+		left: 50%;
+		margin-top: 0px;
+		margin-left: -636px;
+	}
+	#section4 .box{
+		top: 22%;
+		left: 42%;
+		position: absolute;
+		width: 582px;
+	}
+	#section5 #slide1{
+		background: linear-gradient(to right,#CEEBD1,#B6DEB9);
+		padding: 6% 0 0 0;
+	}
+	#section5 #slide2{
+		background: linear-gradient(to right,#B6DEB9,#B1CCB4);
+		padding: 6% 0 0 0;
+	}
+	#section5 #slide3{
+		background: linear-gradient(to right,#B1CCB4,#AEBFAF);
+		padding: 6% 0 0 0;
+	}
+	#section5 #slide4{
+		background: linear-gradient(to right,#AEBFAF,#A6ADA7);
+		padding: 6% 0 0 0;
+	}
+	#section5 #slide5{
+		background-color: #A6ADA7;
+		padding: 6% 0 0 0;
+	}
+	#section6{
+		padding: 6% 0 0 0;
+	}
+	
+	</style>
+
+	<script src="src/jquery.min.js"></script>
+	<script src="src/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="src/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="fullpage">
+		<div class="section" id="section0">
+			<h1>PRESENTATION FOR SAP RECRUITING</h1>
+			<img src="img/SAP_2011_logo.svg" alt="SAP logo" />
+		</div>
+		
+		<div class="section" id="section1"><h1>How long time do you spend in a queue?</h1></div>
+		
+		<div class="section" id="section2">
+			<div class="slide" id="slide1">
+				<h2>A research realized in Sao Paulo says that the waiting can reach 2 hours in leisure places (such as restaurants, bars, night clubs, and others).</h2> 
+				<br />
+				(Source: Folha de Sao Paulo)
+			</div>
+			<div class="slide" id="slide2">
+				<h2>Besides, the payments when leaving is a mess and have many problems with the change and POS systems.</h2> 
+				<br />
+				(Source: Veja Sao Paulo)
+			</div>
+			<div class="slide" id="slide3">
+				<h1>How to turn over this problem?</h1> 
+				<img src="img/Questions_Image.jpg" alt="question"/>
+			</div>
+		</div>
+		
+		<div class="section" id="section3"><h1>EasyGo</h1></div>
+		
+		<div class="section" id="section4">
+			<div class="wrap">
+				<div class="img">
+					<img src="img/easygo_smartphone.png" alt="smartphone at bar" />
+				</div>
+				<div class="box">
+					<strong>EasyGo</strong> is a simplified payment service for your fun. <br />
+					With <strong>EasyGo</strong> you don't have to wait in the queue. <br /><br />
+					<strong><i>Easy to pay, Easy to Go!</i></strong>
+				</div>
+			</div>
+		</div>
+		
+		<div class="section" id="section5">
+			<div class="slide" id="slide1">
+				<h1>How it Works</h1>
+			</div>
+			<div class="slide" id="slide2">
+				<h2>1. Create an account in EasyGo</h2>
+			</div>
+			<div class="slide" id="slide3">
+				<h2>2. Buy credits to your account</h2>
+			</div>
+			<div class="slide" id="slide4">
+				<h2>3. Get the tickets for your event in EasyGo</h2>
+			</div>
+			<div class="slide" id="slide5">
+				<h2>4. Show the QRCode in the place</h2>
+			</div>
+		</div>
+		
+		<div class="section" id="section6">
+			<div class="wrap">
+				<div class="box">
+					<h2>Advantages to be an EasyGo member</h2>
+					- No Queues. <br />
+					- No worries. With <strong>EasyGo</strong> you can choose the event in the last minute. <br />
+					- <strong>EasyGo</strong> members have promotions and discounts to show, bars, restaurants, etc. <br />
+					- You can get exclusive prizes with our fidelity points program. <br />
+					- Integration with the most of social networks. You can show to your friends where you are and give a feedback about the place. <br />
+				</div>
+			</div>
+		</div>		
+	</div>
+</body>
+
+</html>
